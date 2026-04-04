@@ -108,16 +108,6 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-
-                <div className="divider mb-6" />
-
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm flex-shrink-0"
-                    style={{ background: "#1560A8" }}>O</div>
-                  <p style={{ fontSize: "13px", color: "#9999B0" }}>
-                  </p>
-                </div>
-              </div>
             </div>
 
           </div>
