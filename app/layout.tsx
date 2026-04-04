@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import OttoWidget from "@/components/OttoWidget";
 
 export const metadata: Metadata = {
   title: "Oltomatic | AI Built by Operators, for Operators",
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <OttoWidget />
+      </body>
     </html>
   );
 }
