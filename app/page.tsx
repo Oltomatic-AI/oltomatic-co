@@ -7,9 +7,9 @@ const products = [
   {
     name: "OLTO Reach",
     tag: "Lead Generation",
-    description: "AI-powered prospecting that finds, researches, and contacts your ideal clients. Wake up to a pipeline that built itself overnight.",
+    description: "Stop chasing leads. OLTO Reach finds, qualifies, and engages your ideal prospects — so your pipeline builds itself.",
     href: "/reach",
-    features: ["Automated prospect research", "AI lead scoring", "Email enrichment & outreach", "Live pipeline dashboard"],
+    features: ["Automated prospect research", "AI lead scoring", "Personalised outreach", "Live pipeline dashboard"],
     number: "01",
   },
   {
@@ -35,6 +35,7 @@ export default function Home() {
     <main style={{ background: "#080810", minHeight: "100vh" }}>
       <Nav />
 
+      {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 grid-bg" style={{ opacity: 0.35 }} />
         <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
@@ -63,7 +64,7 @@ export default function Home() {
               </h1>
               <p className="animate-fade-up-2 mb-10 max-w-lg"
                 style={{ fontSize: "18px", color: "#9999B0", lineHeight: "1.7" }}>
-                Most AI agencies are developers selling to business owners. We're operators who built the AI we wished we had — then productised it.
+                We've been on your side of the table. We built this because we needed it — and decided others probably needed it too.
               </p>
               <div className="animate-fade-up-3 flex flex-wrap gap-3">
                 <Link href="/contact" className="btn-primary">Book a Discovery Call</Link>
@@ -96,6 +97,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── TWO SIDES ── */}
       <section className="py-28 relative" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -134,6 +136,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PRODUCTS ── */}
       <section id="products" className="py-28 relative" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(21,96,168,0.06) 0%, transparent 60%)" }} />
@@ -177,6 +180,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── BESPOKE ── */}
       <section className="py-28 relative" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -231,6 +235,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── CTA ── */}
       <section className="py-28 relative overflow-hidden" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(21,96,168,0.1) 0%, transparent 65%)" }} />

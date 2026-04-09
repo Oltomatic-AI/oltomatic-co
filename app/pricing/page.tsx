@@ -10,7 +10,14 @@ const voiceTiers = [
     period: "/month",
     setup: "£299 setup",
     description: "For businesses that want to stop missing calls and start capturing every lead.",
-    features: ["1 AI voice agent","Up to 300 minutes/month","Lead capture & qualification","Email notifications on every call","GDPR compliant","Standard voice & personality setup"],
+    features: [
+      "1 AI voice agent",
+      "Up to 300 minutes/month",
+      "Lead capture & qualification",
+      "Email notifications on every call",
+      "GDPR compliant",
+      "Standard voice & personality setup",
+    ],
     cta: "Get Started",
     highlighted: false,
   },
@@ -20,7 +27,15 @@ const voiceTiers = [
     period: "/month",
     setup: "£299 setup",
     description: "For businesses ready to automate bookings and integrate with their existing systems.",
-    features: ["1 AI voice agent","Up to 750 minutes/month","Everything in Starter","Calendar booking integration","CRM integration","Monthly performance report","Custom FAQs & knowledge base"],
+    features: [
+      "1 AI voice agent",
+      "Up to 750 minutes/month",
+      "Everything in Starter",
+      "Calendar booking integration",
+      "CRM integration",
+      "Monthly performance report",
+      "Custom FAQs & knowledge base",
+    ],
     cta: "Get Started",
     highlighted: true,
   },
@@ -30,7 +45,15 @@ const voiceTiers = [
     period: "/month",
     setup: "£299 setup",
     description: "For businesses with high call volume that need maximum coverage and support.",
-    features: ["2 AI voice agents","Unlimited minutes","Everything in Growth","WhatsApp notifications","Priority support","Dedicated account management","Quarterly optimisation sessions"],
+    features: [
+      "2 AI voice agents",
+      "Unlimited minutes",
+      "Everything in Growth",
+      "WhatsApp notifications",
+      "Priority support",
+      "Dedicated account management",
+      "Quarterly optimisation sessions",
+    ],
     cta: "Get Started",
     highlighted: false,
   },
@@ -43,7 +66,14 @@ const reachTiers = [
     period: "/month",
     setup: "£199 setup",
     description: "For businesses ready to test AI-powered outreach on a focused target market.",
-    features: ["1 target sector","200 prospects researched/month","100 personalised emails sent","AI lead scoring","Hot lead alerts","Dashboard access"],
+    features: [
+      "1 target sector",
+      "200 prospects researched/month",
+      "100 personalised emails sent",
+      "AI lead scoring",
+      "Hot lead alerts",
+      "Dashboard access",
+    ],
     cta: "Get Early Access",
     highlighted: false,
   },
@@ -53,7 +83,15 @@ const reachTiers = [
     period: "/month",
     setup: "£199 setup",
     description: "For businesses scaling outreach across multiple sectors with strategic support.",
-    features: ["2 target sectors","500 prospects researched/month","250 personalised emails sent","Everything in Launch","Monthly strategy call","A/B email testing","Reply management"],
+    features: [
+      "2 target sectors",
+      "500 prospects researched/month",
+      "250 personalised emails sent",
+      "Everything in Launch",
+      "Monthly strategy call",
+      "A/B email testing",
+      "Reply management",
+    ],
     cta: "Get Early Access",
     highlighted: true,
   },
@@ -63,19 +101,32 @@ const reachTiers = [
     period: "/month",
     setup: "£199 setup",
     description: "For businesses that want a full outbound pipeline running on autopilot.",
-    features: ["Unlimited sectors","1,000 prospects researched/month","500 personalised emails sent","Everything in Growth","Dedicated account management","CRM sync","Full pipeline reporting"],
+    features: [
+      "Unlimited sectors",
+      "1,000 prospects researched/month",
+      "500 personalised emails sent",
+      "Everything in Growth",
+      "Dedicated account management",
+      "CRM sync",
+      "Full pipeline reporting",
+    ],
     cta: "Get Early Access",
     highlighted: false,
   },
 ];
 
-function PricingCard({ tier }: { tier: typeof voiceTiers[0] }) {
+function PricingCard({ tier, product }: { tier: typeof voiceTiers[0], product: string }) {
   return (
     <div className="relative flex flex-col rounded-2xl p-8"
-      style={{ background: tier.highlighted ? "#0D1628" : "#0D0D1A", border: `1px solid ${tier.highlighted ? "#1560A8" : "#1E1E32"}`, boxShadow: tier.highlighted ? "0 0 40px rgba(21,96,168,0.15)" : "none" }}>
+      style={{
+        background: tier.highlighted ? "#0D1628" : "#0D0D1A",
+        border: `1px solid ${tier.highlighted ? "#1560A8" : "#1E1E32"}`,
+        boxShadow: tier.highlighted ? "0 0 40px rgba(21,96,168,0.15)" : "none",
+      }}>
       {tier.highlighted && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span className="px-3 py-1 rounded-full text-xs font-semibold text-white" style={{ background: "#1560A8" }}>Most Popular</span>
+          <span className="px-3 py-1 rounded-full text-xs font-semibold text-white"
+            style={{ background: "#1560A8" }}>Most Popular</span>
         </div>
       )}
       <div className="mb-6">
@@ -87,7 +138,9 @@ function PricingCard({ tier }: { tier: typeof voiceTiers[0] }) {
         </div>
         <p style={{ color: "#55556A", fontSize: "12px" }}>+ {tier.setup} · Cancel anytime</p>
       </div>
+
       <div className="divider mb-6" />
+
       <ul className="flex flex-col gap-3 mb-8 flex-1">
         {tier.features.map((f) => (
           <li key={f} className="flex items-start gap-3 text-sm" style={{ color: "#9999B0" }}>
@@ -97,9 +150,31 @@ function PricingCard({ tier }: { tier: typeof voiceTiers[0] }) {
           </li>
         ))}
       </ul>
+
       <Link href="/contact"
         className="block text-center py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-        style={{ background: tier.highlighted ? "#1560A8" : "transparent", color: tier.highlighted ? "white" : "#9999B0", border: tier.highlighted ? "none" : "1px solid #1E1E32", textDecoration: "none" }}>
+        style={{
+          background: tier.highlighted ? "#1560A8" : "transparent",
+          color: tier.highlighted ? "white" : "#9999B0",
+          border: tier.highlighted ? "none" : "1px solid #1E1E32",
+          textDecoration: "none",
+        }}
+        onMouseEnter={(e) => {
+          if (tier.highlighted) {
+            (e.currentTarget as HTMLElement).style.background = "#2272C3";
+          } else {
+            (e.currentTarget as HTMLElement).style.borderColor = "#1560A8";
+            (e.currentTarget as HTMLElement).style.color = "#EEEEF5";
+          }
+        }}
+        onMouseLeave={(e) => {
+          if (tier.highlighted) {
+            (e.currentTarget as HTMLElement).style.background = "#1560A8";
+          } else {
+            (e.currentTarget as HTMLElement).style.borderColor = "#1E1E32";
+            (e.currentTarget as HTMLElement).style.color = "#9999B0";
+          }
+        }}>
         {tier.cta}
       </Link>
     </div>
@@ -111,29 +186,40 @@ export default function PricingPage() {
     <main style={{ background: "#080810", minHeight: "100vh" }}>
       <Nav />
 
+      {/* Header */}
       <section className="relative pt-40 pb-16 overflow-hidden">
         <div className="absolute inset-0 grid-bg" style={{ opacity: 0.25 }} />
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(21,96,168,0.1) 0%, transparent 60%)" }} />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <p className="section-label mb-4">Pricing</p>
-          <h1 className="font-bold mb-5" style={{ fontSize: "clamp(36px, 4vw, 56px)", color: "#EEEEF5" }}>Simple, transparent pricing</h1>
+          <h1 className="font-bold mb-5" style={{ fontSize: "clamp(36px, 4vw, 56px)", color: "#EEEEF5" }}>
+            Simple, transparent pricing
+          </h1>
           <p style={{ color: "#9999B0", fontSize: "18px", maxWidth: "520px", margin: "0 auto" }}>
             No hidden fees. No surprise invoices. Know exactly what you're paying and what you're getting.
           </p>
         </div>
       </section>
 
+      {/* OLTO Voice */}
       <section className="py-20" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm" style={{ background: "#1560A8" }}>O</div>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm flex-shrink-0"
+              style={{ background: "#1560A8" }}>O</div>
             <p className="section-label">OLTO Voice</p>
           </div>
-          <h2 className="font-bold mb-3" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>AI call handling</h2>
-          <p className="mb-12 max-w-xl" style={{ color: "#9999B0" }}>Every plan includes full setup, configuration, and onboarding. You're live within 48 hours.</p>
+          <h2 className="font-bold mb-3" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>
+            AI call handling
+          </h2>
+          <p className="mb-12 max-w-xl" style={{ color: "#9999B0" }}>
+            Every plan includes full setup, configuration, and onboarding. You're live within 48 hours.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {voiceTiers.map((tier) => <PricingCard key={tier.name} tier={tier} />)}
+            {voiceTiers.map((tier) => (
+              <PricingCard key={tier.name} tier={tier} product="voice" />
+            ))}
           </div>
           <p className="mt-6 text-sm text-center" style={{ color: "#55556A" }}>
             Need more than 2 agents or enterprise volume? <Link href="/contact" style={{ color: "#1560A8" }}>Talk to us.</Link>
@@ -141,36 +227,52 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* OLTO Reach */}
       <section className="py-20" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm" style={{ background: "#2272C3" }}>O</div>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm flex-shrink-0"
+              style={{ background: "#2272C3" }}>O</div>
             <p className="section-label">OLTO Reach</p>
           </div>
           <div className="flex flex-wrap items-end justify-between gap-4 mb-12">
             <div>
-              <h2 className="font-bold mb-3" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>AI lead generation</h2>
-              <p className="max-w-xl" style={{ color: "#9999B0" }}>Currently in controlled rollout. Plans below reflect our standard tiers — get in touch to discuss access.</p>
+              <h2 className="font-bold mb-3" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>
+                AI lead generation
+              </h2>
+              <p className="max-w-xl" style={{ color: "#9999B0" }}>
+                Currently in controlled rollout. Plans below reflect our standard tiers — get in touch to discuss access and availability.
+              </p>
             </div>
             <span className="tag">Early access</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {reachTiers.map((tier) => <PricingCard key={tier.name} tier={tier} />)}
+            {reachTiers.map((tier) => (
+              <PricingCard key={tier.name} tier={tier} product="reach" />
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Oltomatic Bespoke */}
       <section className="py-20" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm" style={{ background: "#1560A8" }}>O</div>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm flex-shrink-0"
+                  style={{ background: "#1560A8" }}>O</div>
                 <p className="section-label">Oltomatic Bespoke</p>
               </div>
-              <h2 className="font-bold mb-5" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>Custom builds are quoted individually</h2>
-              <p className="mb-5 leading-relaxed" style={{ color: "#9999B0" }}>Every bespoke project is different. Scope, complexity, integrations, timeline — these all shape the investment. We don't publish a number because a number without context is meaningless.</p>
-              <p className="mb-8 leading-relaxed" style={{ color: "#9999B0" }}>What we can tell you: we work with businesses that have a real problem and want a real solution. If that's you, let's talk.</p>
+              <h2 className="font-bold mb-5" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>
+                Custom builds are quoted individually
+              </h2>
+              <p className="mb-5 leading-relaxed" style={{ color: "#9999B0" }}>
+                Every bespoke project is different. Scope, complexity, integrations, timeline — these all shape the investment. We don't publish a number because a number without context is meaningless.
+              </p>
+              <p className="mb-8 leading-relaxed" style={{ color: "#9999B0" }}>
+                What we can tell you: we work with businesses that have a real problem and want a real solution. If that's you, let's talk.
+              </p>
               <Link href="/contact" className="btn-primary">Talk to the team</Link>
             </div>
             <div className="card p-8" style={{ borderColor: "#1E1E32" }}>
@@ -201,9 +303,12 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="py-20" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="font-bold mb-12 text-center" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>Common questions</h2>
+          <h2 className="font-bold mb-12 text-center" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>
+            Common questions
+          </h2>
           <div className="flex flex-col gap-6">
             {[
               { q: "Is there a contract?", a: "No long-term contracts. All plans are monthly and can be cancelled anytime. We'd rather earn your business every month than lock you in." },
@@ -221,15 +326,20 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="py-20 relative overflow-hidden" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(21,96,168,0.08) 0%, transparent 65%)" }} />
         <div className="relative max-w-2xl mx-auto px-6 text-center">
-          <h2 className="font-bold mb-4" style={{ fontSize: "clamp(28px, 3vw, 42px)", color: "#EEEEF5" }}>Not sure which plan is right?</h2>
+          <h2 className="font-bold mb-4" style={{ fontSize: "clamp(28px, 3vw, 42px)", color: "#EEEEF5" }}>
+            Not sure which plan is right?
+          </h2>
           <p className="mb-8" style={{ color: "#9999B0", fontSize: "16px" }}>
             Book a 30-minute call. We'll ask the right questions and tell you honestly what makes sense for your operation.
           </p>
-          <Link href="/contact" className="btn-primary" style={{ fontSize: "15px", padding: "14px 28px" }}>Book a Discovery Call</Link>
+          <Link href="/contact" className="btn-primary" style={{ fontSize: "15px", padding: "14px 28px" }}>
+            Book a Discovery Call
+          </Link>
         </div>
       </section>
 

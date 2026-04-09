@@ -21,7 +21,7 @@ const navLinks = [
   { href: "/reach", label: "OLTO Reach" },
   { href: "/voice", label: "OLTO Voice" },
   { href: "/ops", label: "OLTO Ops" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/support", label: "Support" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -45,37 +45,26 @@ export default function Nav() {
       }}>
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Logo />
-
         <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}
               className="text-sm transition-colors duration-200"
-              style={{
-                color: pathname === link.href ? "#EEEEF5" : "#55556A",
-                fontWeight: pathname === link.href ? "500" : "400",
-                textDecoration: "none",
-              }}
+              style={{ color: pathname === link.href ? "#EEEEF5" : "#55556A", fontWeight: pathname === link.href ? "500" : "400", textDecoration: "none" }}
               onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#9999B0"; }}
               onMouseLeave={(e) => { (e.target as HTMLElement).style.color = pathname === link.href ? "#EEEEF5" : "#55556A"; }}>
               {link.label}
             </Link>
           ))}
         </div>
-
         <Link href="/contact" className="hidden md:inline-flex btn-primary" style={{ padding: "9px 18px", fontSize: "13px" }}>
           Book a Call
         </Link>
-
         <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setMenuOpen(!menuOpen)}>
-          <span className="block w-5 h-0.5 transition-all duration-300"
-            style={{ background: "#EEEEF5", transform: menuOpen ? "rotate(45deg) translateY(8px)" : "" }} />
-          <span className="block w-5 h-0.5 transition-all duration-300"
-            style={{ background: "#EEEEF5", opacity: menuOpen ? 0 : 1 }} />
-          <span className="block w-5 h-0.5 transition-all duration-300"
-            style={{ background: "#EEEEF5", transform: menuOpen ? "rotate(-45deg) translateY(-8px)" : "" }} />
+          <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: "#EEEEF5", transform: menuOpen ? "rotate(45deg) translateY(8px)" : "" }} />
+          <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: "#EEEEF5", opacity: menuOpen ? 0 : 1 }} />
+          <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: "#EEEEF5", transform: menuOpen ? "rotate(-45deg) translateY(-8px)" : "" }} />
         </button>
       </div>
-
       {menuOpen && (
         <div className="md:hidden" style={{ background: "rgba(8,8,16,0.97)", borderTop: "1px solid #1E1E32" }}>
           <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4">
