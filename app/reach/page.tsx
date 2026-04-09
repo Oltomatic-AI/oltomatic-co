@@ -18,7 +18,7 @@ export default function ReachPage() {
           </span>
           <h1 className="font-bold mb-6 leading-[1.05]" style={{ fontSize: "clamp(40px, 5vw, 68px)", color: "#EEEEF5" }}>
             Leads that come to you.<br />
-            <span className="blue-text">Not the other way around.</span>
+            <span style={{ background: "linear-gradient(135deg, #16A34A, #4ADE80)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Not the other way around.</span>
           </h1>
           <p className="mb-10 max-w-xl" style={{ fontSize: "18px", color: "#9999B0", lineHeight: "1.7" }}>
             OLTO Reach handles the work of finding and engaging your ideal clients — so your time goes on closing, not chasing.
@@ -42,7 +42,7 @@ export default function ReachPage() {
               { step: "04", title: "You close", desc: "Your dashboard shows every prospect, their status, and any replies. You just show up to the interesting conversations." },
             ].map((item) => (
               <div key={item.step} className="card p-6">
-                <span className="text-2xl font-bold font-mono block mb-4" style={{ color: "#1560A8" }}>{item.step}</span>
+                <span className="text-2xl font-bold font-mono block mb-4" style={{ color: "#16A34A" }}>{item.step}</span>
                 <h3 className="font-semibold mb-2" style={{ color: "#EEEEF5" }}>{item.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#9999B0" }}>{item.desc}</p>
               </div>
@@ -65,7 +65,7 @@ export default function ReachPage() {
               { title: "Flexible operation", desc: "Run it on a schedule or trigger it manually — configured around how your business actually works." },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 p-6 card interactive">
-                <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: "rgba(21,96,168,0.15)", color: "#1560A8" }}>✓</div>
+                <div className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style={{ background: "rgba(22,163,74,0.15)", color: "#16A34A" }}>✓</div>
                 <div>
                   <h3 className="font-semibold mb-1" style={{ color: "#EEEEF5" }}>{item.title}</h3>
                   <p className="text-sm" style={{ color: "#9999B0" }}>{item.desc}</p>
@@ -91,10 +91,10 @@ export default function ReachPage() {
               { name: "Pipeline", price: "£999", setup: "£199", desc: "For businesses that want a full outbound pipeline running continuously.", features: ["Unlimited sectors", "1,000 prospects/month researched", "500 personalised messages sent", "Everything in Growth", "Dedicated account management", "Full pipeline reporting"] },
             ].map((tier) => (
               <div key={tier.name} className="relative flex flex-col rounded-2xl p-8"
-                style={{ background: tier.highlight ? "#0D1628" : "#0D0D1A", border: `1px solid ${tier.highlight ? "#1560A8" : "#1E1E32"}`, boxShadow: tier.highlight ? "0 0 40px rgba(21,96,168,0.15)" : "none" }}>
+                style={{ background: tier.highlight ? "#0D1628" : "#0D0D1A", border: `1px solid ${tier.highlight ? "#16A34A" : "#1E1E32"}`, boxShadow: tier.highlight ? "0 0 40px rgba(22,163,74,0.1)" : "none" }}>
                 {tier.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold text-white" style={{ background: "#1560A8" }}>Most Popular</span>
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold text-white" style={{ background: "#16A34A" }}>Most Popular</span>
                   </div>
                 )}
                 <p className="font-semibold mb-1 text-lg" style={{ color: "#EEEEF5" }}>{tier.name}</p>
@@ -108,14 +108,14 @@ export default function ReachPage() {
                 <ul className="flex flex-col gap-2.5 flex-1 mb-8">
                   {tier.features.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: "#9999B0" }}>
-                      <span className="w-4 h-4 rounded flex items-center justify-center flex-shrink-0 text-xs mt-0.5" style={{ background: "rgba(21,96,168,0.15)", color: "#5BA3E0" }}>✓</span>
+                      <span className="w-4 h-4 rounded flex items-center justify-center flex-shrink-0 text-xs mt-0.5" style={{ background: "rgba(22,163,74,0.12)", color: "#16A34A" }}>✓</span>
                       {f}
                     </li>
                   ))}
                 </ul>
                 <Link href="/contact"
                   className="block text-center py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-                  style={{ background: tier.highlight ? "#1560A8" : "transparent", color: tier.highlight ? "white" : "#9999B0", border: tier.highlight ? "none" : "1px solid #1E1E32", textDecoration: "none" }}>
+                  style={{ background: tier.highlight ? "#16A34A" : "transparent", color: tier.highlight ? "white" : "#9999B0", border: tier.highlight ? "none" : "1px solid #1E1E32", textDecoration: "none" }}>
                   Get Early Access
                 </Link>
               </div>

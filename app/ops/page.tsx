@@ -18,7 +18,7 @@ export default function OpsPage() {
           </span>
           <h1 className="font-bold mb-6 leading-[1.05]" style={{ fontSize: "clamp(40px, 5vw, 68px)", color: "#EEEEF5" }}>
             Operational tools.<br />
-            <span className="blue-text">Built for the real world.</span>
+            <span style={{ background: "linear-gradient(135deg, #7C3AED, #A78BFA)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Built for the real world.</span>
           </h1>
           <p className="mb-10 max-w-xl" style={{ fontSize: "18px", color: "#9999B0", lineHeight: "1.7" }}>
             OLTO Ops is a suite of operational tools — each one built to solve a real problem in how businesses actually run. Job intake, approvals, notifications, scheduling. Configured around your operation, not the other way around.
