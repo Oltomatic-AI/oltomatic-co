@@ -2,39 +2,28 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const Logo = () => (
-  <Link href="/" className="flex items-center gap-3 group" style={{ textDecoration: "none" }}>
-    <div className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-white text-lg leading-none flex-shrink-0"
-      style={{ background: "#1560A8", fontFamily: "'DM Sans', sans-serif", letterSpacing: "-0.5px", fontSize: "18px" }}>
-      O
-    </div>
-    <span className="text-sm font-semibold tracking-tight hidden sm:block" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <span style={{ color: "#1560A8" }}>OLTO</span>
-      <span style={{ color: "#EEEEF5" }}>MATIC</span>
-    </span>
-  </Link>
-);
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/reach", label: "OLTO Reach" },
-  { href: "/voice", label: "OLTO Voice" },
-  { href: "/ops", label: "OLTO Ops" },
-  { href: "/support", label: "Support" },
-  { href: "/contact", label: "Contact" },
-];
+import { useLang } from "@/lib/LangContext";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t, lang, setLang } = useLang();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  const navLinks = [
+    { href: "/", label: t("nav_home") },
+    { href: "/reach", label: t("nav_reach") },
+    { href: "/voice", label: t("nav_voice") },
+    { href: "/ops", label: t("nav_ops") },
+    { href: "/support", label: t("nav_support") },
+    { href: "/contact", label: t("nav_contact") },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
@@ -44,8 +33,15 @@ export default function Nav() {
         borderBottom: scrolled ? "1px solid rgba(30,30,50,0.8)" : "1px solid transparent",
       }}>
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Logo />
-        <div className="hidden md:flex items-center gap-7">
+        <Link href="/" className="flex items-center gap-3" style={{ textDecoration: "none" }}>
+          <div className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-white text-lg" style={{ background: "#1560A8" }}>O</div>
+          <span className="text-sm font-semibold tracking-tight hidden sm:block">
+            <span style={{ color: "#1560A8" }}>OLTO</span>
+            <span style={{ color: "#EEEEF5" }}>MATIC</span>
+          </span>
+        </Link>
+
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}
               className="text-sm transition-colors duration-200"
@@ -56,28 +52,44 @@ export default function Nav() {
             </Link>
           ))}
         </div>
-        <Link href="/contact" className="hidden md:inline-flex btn-primary" style={{ padding: "9px 18px", fontSize: "13px" }}>
-          Book a Call
-        </Link>
+
+        <div className="hidden md:flex items-center gap-3">
+          {/* Language toggle */}
+          <button onClick={() => setLang(lang === "es" ? "en" : "es")}
+            className="text-xs font-medium px-3 py-1.5 rounded-lg transition-all"
+            style={{ background: "rgba(21,96,168,0.12)", color: "#5BA3E0", border: "1px solid rgba(21,96,168,0.2)" }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(21,96,168,0.22)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(21,96,168,0.12)"; }}>
+            {lang === "es" ? "EN" : "ES"}
+          </button>
+          <Link href="/contact" className="btn-primary" style={{ padding: "9px 18px", fontSize: "13px" }}>
+            {t("nav_cta")}
+          </Link>
+        </div>
+
         <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setMenuOpen(!menuOpen)}>
           <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: "#EEEEF5", transform: menuOpen ? "rotate(45deg) translateY(8px)" : "" }} />
           <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: "#EEEEF5", opacity: menuOpen ? 0 : 1 }} />
           <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: "#EEEEF5", transform: menuOpen ? "rotate(-45deg) translateY(-8px)" : "" }} />
         </button>
       </div>
+
       {menuOpen && (
         <div className="md:hidden" style={{ background: "rgba(8,8,16,0.97)", borderTop: "1px solid #1E1E32" }}>
           <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
-                className="text-sm py-1.5"
-                style={{ color: pathname === link.href ? "#EEEEF5" : "#9999B0", textDecoration: "none" }}>
+                className="text-sm py-1.5" style={{ color: pathname === link.href ? "#EEEEF5" : "#9999B0", textDecoration: "none" }}>
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" onClick={() => setMenuOpen(false)}
-              className="btn-primary text-center justify-center mt-2" style={{ textDecoration: "none" }}>
-              Book a Call
+            <button onClick={() => setLang(lang === "es" ? "en" : "es")}
+              className="text-xs font-medium px-3 py-2 rounded-lg w-fit"
+              style={{ background: "rgba(21,96,168,0.12)", color: "#5BA3E0", border: "1px solid rgba(21,96,168,0.2)" }}>
+              {lang === "es" ? "Switch to English" : "Cambiar a Español"}
+            </button>
+            <Link href="/contact" onClick={() => setMenuOpen(false)} className="btn-primary text-center" style={{ textDecoration: "none" }}>
+              {t("nav_cta")}
             </Link>
           </div>
         </div>

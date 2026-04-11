@@ -1,60 +1,51 @@
 "use client";
 import { useEffect, useState } from "react";
-
-const events = [
-  { icon: "📞", text: "Call handled", detail: "Hospitality · London" },
-  { icon: "🎯", text: "Lead qualified", detail: "Dental practice · Manchester" },
-  { icon: "📅", text: "Appointment booked", detail: "Hair & beauty · Birmingham" },
-  { icon: "📊", text: "Prospects researched", detail: "32 new contacts found" },
-  { icon: "📞", text: "After-hours call answered", detail: "Trades · Leeds" },
-  { icon: "✉️", text: "Outreach sent", detail: "18 personalised emails" },
-  { icon: "🎯", text: "Hot lead flagged", detail: "Professional services · Bristol" },
-  { icon: "📅", text: "Meeting confirmed", detail: "Consulting firm · Edinburgh" },
-  { icon: "📞", text: "Lead captured", detail: "Estate agent · Glasgow" },
-  { icon: "📊", text: "Pipeline updated", detail: "47 prospects scored" },
-  { icon: "✉️", text: "Reply received", detail: "Positive response · Leeds" },
-  { icon: "📞", text: "Call transferred", detail: "Human handoff · London" },
-];
+import { useLang } from "@/lib/LangContext";
 
 function randomBetween(a: number, b: number) {
   return Math.floor(Math.random() * (b - a + 1)) + a;
 }
 
-function timeAgo() {
-  const mins = randomBetween(2, 58);
-  return `${mins}m ago`;
-}
-
-const stats = [
-  { value: "62%", label: "of calls missed outside hours" },
-  { value: "40hrs", label: "lost weekly to manual tasks" },
-  { value: "3–5×", label: "ROI from AI-first operations" },
-  { value: "£0", label: "revenue from a missed prospect" },
-];
-
 export default function ActivityTicker() {
+  const { t } = useLang();
+
+  const getEvents = () => [
+    { icon: "📞", text: t("tick1"), detail: t("tick_d1") },
+    { icon: "🎯", text: t("tick2"), detail: t("tick_d2") },
+    { icon: "📅", text: t("tick3"), detail: t("tick_d3") },
+    { icon: "📊", text: t("tick4"), detail: t("tick_d4") },
+    { icon: "📞", text: t("tick5"), detail: t("tick_d5") },
+    { icon: "✉️", text: t("tick6"), detail: t("tick_d6") },
+    { icon: "🎯", text: t("tick7"), detail: t("tick_d7") },
+    { icon: "📅", text: t("tick8"), detail: t("tick_d8") },
+    { icon: "📞", text: t("tick9"), detail: t("tick_d9") },
+    { icon: "📊", text: t("tick10"), detail: t("tick_d10") },
+    { icon: "✉️", text: t("tick11"), detail: t("tick_d11") },
+    { icon: "📞", text: t("tick12"), detail: t("tick_d12") },
+  ];
+
   const [items, setItems] = useState(() =>
-    [...events].sort(() => Math.random() - 0.5).slice(0, 4).map((e, i) => ({
-      ...e,
-      id: i,
-      time: timeAgo(),
-    }))
+    Array.from({ length: 4 }, (_, i) => ({ ...getEvents()[i], id: i, time: `${randomBetween(2,58)} min` }))
   );
 
   useEffect(() => {
     const interval = setInterval(() => {
+      const events = getEvents();
       const newEvent = events[randomBetween(0, events.length - 1)];
-      setItems((prev) => [
-        { ...newEvent, id: Date.now(), time: "just now" },
-        ...prev.slice(0, 3),
-      ]);
+      setItems((prev) => [{ ...newEvent, id: Date.now(), time: t("just_now") }, ...prev.slice(0, 3)]);
     }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [t]);
+
+  const stats = [
+    { value: t("stat1_val"), label: t("stat1_label") },
+    { value: t("stat2_val"), label: t("stat2_label") },
+    { value: t("stat3_val"), label: t("stat3_label") },
+    { value: t("stat4_val"), label: t("stat4_label") },
+  ];
 
   return (
     <div>
-      {/* Stats grid */}
       <div className="grid grid-cols-2 gap-4 mb-6">
         {stats.map((s) => (
           <div key={s.label} className="p-3 rounded-xl"
@@ -64,27 +55,18 @@ export default function ActivityTicker() {
           </div>
         ))}
       </div>
-
-      {/* Divider */}
       <div className="flex items-center gap-3 mb-4">
         <div className="flex-1 h-px" style={{ background: "#1E1E32" }} />
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#16A34A", animation: "pulse 2s infinite" }} />
-          <span style={{ fontSize: "10px", color: "#16A34A", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" }}>Live activity</span>
+          <span style={{ fontSize: "10px", color: "#16A34A", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" }}>{t("ticker_label")}</span>
         </div>
         <div className="flex-1 h-px" style={{ background: "#1E1E32" }} />
       </div>
-
-      {/* Live feed */}
       <div className="flex flex-col gap-2">
         {items.map((item, i) => (
-          <div key={item.id}
-            className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-700"
-            style={{
-              background: i === 0 ? "rgba(21,96,168,0.1)" : "transparent",
-              border: `1px solid ${i === 0 ? "rgba(21,96,168,0.2)" : "transparent"}`,
-              opacity: i === 0 ? 1 : Math.max(0.35, 1 - i * 0.22),
-            }}>
+          <div key={item.id} className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-700"
+            style={{ background: i === 0 ? "rgba(21,96,168,0.1)" : "transparent", border: `1px solid ${i === 0 ? "rgba(21,96,168,0.2)" : "transparent"}`, opacity: i === 0 ? 1 : Math.max(0.35, 1 - i * 0.22) }}>
             <span style={{ fontSize: "13px", flexShrink: 0 }}>{item.icon}</span>
             <div className="flex-1 min-w-0">
               <p style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEF5", margin: 0 }}>{item.text}</p>
