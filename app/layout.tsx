@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LangProvider } from "@/lib/LangContext";
+import ChicoWidget from "@/components/ChicoWidget";
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["300","400","500","600","700","800"] });
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={dmSans.className} style={{ background: "#080810", margin: 0 }}>
         <LangProvider>
           {children}
+          <ChicoWidget />
         </LangProvider>
       </body>
     </html>
