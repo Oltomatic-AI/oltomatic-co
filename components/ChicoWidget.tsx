@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState, useContext } from 'react';
-import { LangContext } from '../lib/LangContext';
+import { useEffect, useRef, useState } from 'react';
+import { useLang } from '../lib/LangContext';
 
 declare global {
   interface Window {
@@ -16,8 +16,7 @@ declare global {
 }
 
 export default function ChicoWidget() {
-  const { lang } = useContext(LangContext);
-  const scriptRef = useRef<HTMLScriptElement | null>(null);
+  const { lang } = useLang();
   const instanceRef = useRef<{ destroy?: () => void } | null>(null);
   const [loaded, setLoaded] = useState(false);
 
@@ -28,7 +27,6 @@ export default function ChicoWidget() {
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
-    scriptRef.current = script;
 
     script.onload = () => setLoaded(true);
 
