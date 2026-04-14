@@ -10,7 +10,7 @@ export default function ReachPage() {
 
   const tiers = [
     {
-      name: "Launch", price: es ? "$1.200.000" : "COP 1,200,000", setup: es ? "$300.000" : "COP 300,000",
+      name: es ? "Lanzamiento" : "Launch", price: es ? "$1.200.000" : "COP 1,200,000", setup: es ? "$300.000" : "COP 300,000",
       desc: es ? "Para empresas listas para probar el alcance automatizado en un mercado objetivo." : "For businesses ready to test AI-powered outreach on a focused target market.",
       features: es
         ? ["1 sector objetivo", "200 prospectos/mes investigados", "100 mensajes personalizados enviados", "Puntuación de leads con IA", "Alertas de leads calientes", "Acceso al panel"]
@@ -25,7 +25,7 @@ export default function ReachPage() {
       highlight: true,
     },
     {
-      name: "Pipeline", price: es ? "$3.000.000" : "COP 3,000,000", setup: "scoped",
+      name: es ? "Pipeline" : "Pipeline", price: es ? "$3.000.000" : "COP 3,000,000", setup: "scoped",
       desc: es ? "Para empresas que quieren un pipeline de salida completo funcionando continuamente." : "For businesses that want a full outbound pipeline running continuously.",
       features: es
         ? ["Sectores ilimitados", "1.000 prospectos/mes investigados", "500 mensajes personalizados enviados", "Todo en Growth", "Gestor de cuenta dedicado", "Reportes completos de pipeline"]

@@ -39,7 +39,7 @@ export default function ContactPage() {
                 {es ? "Sin jerga técnica. Sin presión. Solo una conversación directa sobre lo que la IA puede hacer realmente por tu negocio. Te diremos honestamente si no somos el socio adecuado." : "No jargon. No fluff. Just a straight conversation about what AI can actually do for your business. We'll tell you honestly if we're not the right fit."}
               </p>
               <p className="section-label mb-2">EMAIL</p>
-              <a href="mailto:hello@oltomatic.ai" style={{ color: "#1560A8", fontSize: "15px" }}>hello@oltomatic.ai</a>
+              <a href="mailto:hello@oltomatic.co" style={{ color: "#1560A8", fontSize: "15px" }}>hello@oltomatic.co</a>
               <div className="card p-6 mt-8">
                 <p className="font-semibold mb-4" style={{ color: "#EEEEF5", fontSize: "14px" }}>{es ? "Qué esperar" : "What to expect"}</p>
                 {(es ? ["Llamada de descubrimiento de 30 minutos", "Escuchamos antes de proponer", "Evaluación honesta de qué puede hacer la IA por ti", "Próximos pasos claros — sin presión de venta"] : ["30-minute discovery call", "We listen before we pitch", "Honest assessment of what AI can do for you", "Clear next steps — no hard sell"]).map((item) => (
