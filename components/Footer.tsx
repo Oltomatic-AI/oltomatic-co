@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useLang } from "@/lib/LangContext";
 
 export default function Footer() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <footer style={{ background: "#080810", borderTop: "1px solid #1E1E32" }}>
       <div className="max-w-6xl mx-auto px-6 py-16">
@@ -34,6 +34,8 @@ export default function Footer() {
                 { href: "/contact", labelKey: "footer_contact" as const },
                 { href: "/support", labelKey: "footer_support" as const },
                 { href: "/privacy", labelKey: "footer_privacy" as const },
+                { href: "/cookies", label: lang === "es" ? "Cookies" : "Cookies" },
+                { href: "/ai-disclosure", label: lang === "es" ? "Aviso de IA" : "AI Disclosure" },
                 { href: "/terms", labelKey: "footer_terms" as const },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="text-sm hover:text-white transition-colors" style={{ color: "#55556A", textDecoration: "none" }}>{t(l.labelKey)}</Link>
