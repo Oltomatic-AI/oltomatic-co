@@ -20,7 +20,7 @@ export default function ReachPage() {
       name: "Growth", price: es ? "$2.100.000" : "COP 2,100,000", setup: es ? "$900.000" : "COP 900,000",
       desc: es ? "Para empresas que escalan el alcance en múltiples sectores." : "For businesses scaling outreach across multiple sectors.",
       features: es
-        ? ["2 sectores objetivo", "500 prospectos/mes investigados", "250 mensajes personalizados enviados", "Todo en Launch", "Llamada mensual de estrategia", "Gestión de respuestas"]
+        ? ["2 sectores objetivo", "500 prospectos/mes investigados", "250 mensajes personalizados enviados", "Todo en Lanzamiento", "Llamada mensual de estrategia", "Gestión de respuestas"]
         : ["2 target sectors", "500 prospects/month researched", "250 personalised messages sent", "Everything in Launch", "Monthly strategy call", "Reply management"],
       highlight: true,
     },
