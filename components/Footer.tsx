@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "#55556A" }}>{t("footer_tagline")}</p>
-            <a href="mailto:hello@oltomatic.ai" className="text-sm" style={{ color: "#1560A8" }}>hello@oltomatic.ai</a>
+            <a href="mailto:hello@oltomatic.co" className="text-sm" style={{ color: "#1560A8" }}>hello@oltomatic.co</a>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#55556A" }}>{t("footer_products")}</p>
