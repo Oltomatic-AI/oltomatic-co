@@ -4,6 +4,18 @@ import { useLang } from "@/lib/LangContext";
 
 export default function Footer() {
   const { t, lang } = useLang();
+
+  // Each link either uses a translation key OR a language-conditional string.
+  // Normalise both to a resolved label so we never call t(undefined).
+  const companyLinks: { href: string; label: string }[] = [
+    { href: "/contact", label: t("footer_contact") },
+    { href: "/support", label: t("footer_support") },
+    { href: "/privacy", label: t("footer_privacy") },
+    { href: "/cookies", label: lang === "es" ? "Cookies" : "Cookies" },
+    { href: "/ai-disclosure", label: lang === "es" ? "Aviso de IA" : "AI Disclosure" },
+    { href: "/terms", label: t("footer_terms") },
+  ];
+
   return (
     <footer style={{ background: "#080810", borderTop: "1px solid #1E1E32" }}>
       <div className="max-w-6xl mx-auto px-6 py-16">
@@ -30,15 +42,8 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#55556A" }}>{t("footer_company")}</p>
             <div className="flex flex-col gap-3">
-              {[
-                { href: "/contact", labelKey: "footer_contact" as const },
-                { href: "/support", labelKey: "footer_support" as const },
-                { href: "/privacy", labelKey: "footer_privacy" as const },
-                { href: "/cookies", label: lang === "es" ? "Cookies" : "Cookies" },
-                { href: "/ai-disclosure", label: lang === "es" ? "Aviso de IA" : "AI Disclosure" },
-                { href: "/terms", labelKey: "footer_terms" as const },
-              ].map((l) => (
-                <Link key={l.href} href={l.href} className="text-sm hover:text-white transition-colors" style={{ color: "#55556A", textDecoration: "none" }}>{t(l.labelKey)}</Link>
+              {companyLinks.map((l) => (
+                <Link key={l.href} href={l.href} className="text-sm hover:text-white transition-colors" style={{ color: "#55556A", textDecoration: "none" }}>{l.label}</Link>
               ))}
             </div>
           </div>
