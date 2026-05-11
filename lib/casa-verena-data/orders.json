@@ -1,0 +1,147 @@
+{
+  "orders": [
+    {
+      "order_number": "CV-78421",
+      "customer_type": "consumer",
+      "customer_name": "González",
+      "items": [
+        { "sku": "HC-101", "quantity": 1 },
+        { "sku": "WL-302", "quantity": 1 }
+      ],
+      "total": 174000,
+      "status": "shipped",
+      "status_es": "Enviado",
+      "eta_es": "Mañana en el transcurso del día",
+      "carrier": "Coordinadora",
+      "tracking_number": "COORD-2026-78421",
+      "shipping_city": "Bogotá",
+      "ordered_date": "Hace 3 días"
+    },
+    {
+      "order_number": "CV-78445",
+      "customer_type": "consumer",
+      "customer_name": "Restrepo",
+      "items": [
+        { "sku": "KE-201", "quantity": 1 },
+        { "sku": "PC-402", "quantity": 1 }
+      ],
+      "total": 244000,
+      "status": "in_preparation",
+      "status_es": "En preparación",
+      "eta_es": "2 a 3 días hábiles",
+      "carrier": null,
+      "tracking_number": null,
+      "shipping_city": "Medellín",
+      "ordered_date": "Ayer"
+    },
+    {
+      "order_number": "CV-78502",
+      "customer_type": "promotora",
+      "customer_name": "Jiménez",
+      "items": [
+        { "sku": "HC-102", "quantity": 6 },
+        { "sku": "HC-103", "quantity": 4 },
+        { "sku": "WL-303", "quantity": 8 },
+        { "sku": "PC-401", "quantity": 12 }
+      ],
+      "total": 745000,
+      "status": "delivered",
+      "status_es": "Entregado",
+      "eta_es": "Entregado hace 3 días",
+      "carrier": "Servientrega",
+      "tracking_number": "SERV-2026-78502",
+      "shipping_city": "Cali",
+      "ordered_date": "Hace 8 días",
+      "notes": "Pedido de catálogo Ciclo 14"
+    },
+    {
+      "order_number": "CV-78551",
+      "customer_type": "consumer",
+      "customer_name": "Morales",
+      "items": [
+        { "sku": "WL-301", "quantity": 1 }
+      ],
+      "total": 145000,
+      "status": "delayed",
+      "status_es": "Retrasado por la transportadora",
+      "eta_es": "Mañana o pasado mañana",
+      "carrier": "Coordinadora",
+      "tracking_number": "COORD-2026-78551",
+      "shipping_city": "Cartagena",
+      "ordered_date": "Hace 6 días",
+      "notes": "Retraso reportado por Coordinadora, no por Casa Verena"
+    },
+    {
+      "order_number": "CV-78577",
+      "customer_type": "promotora",
+      "customer_name": "Castaño",
+      "items": [
+        { "sku": "HC-101", "quantity": 3 },
+        { "sku": "KE-203", "quantity": 5 },
+        { "sku": "WL-302", "quantity": 4 },
+        { "sku": "PC-401", "quantity": 8 }
+      ],
+      "total": 869000,
+      "status": "shipped",
+      "status_es": "Enviado",
+      "eta_es": "Hoy en el transcurso del día",
+      "carrier": "Servientrega",
+      "tracking_number": "SERV-2026-78577",
+      "shipping_city": "Bucaramanga",
+      "ordered_date": "Hace 2 días",
+      "notes": "Pedido de catálogo Ciclo 14"
+    },
+    {
+      "order_number": "CV-78603",
+      "customer_type": "consumer",
+      "customer_name": "Vargas",
+      "items": [
+        { "sku": "HC-105", "quantity": 1 }
+      ],
+      "total": 32900,
+      "status": "cancelled_refunded",
+      "status_es": "Cancelado — reembolso procesado",
+      "eta_es": "El reembolso debe reflejarse en 7 a 10 días hábiles",
+      "carrier": null,
+      "tracking_number": null,
+      "shipping_city": "Pereira",
+      "ordered_date": "Hace 5 días",
+      "notes": "Cancelado por agotamiento de inventario"
+    },
+    {
+      "order_number": "CV-78628",
+      "customer_type": "consumer",
+      "customer_name": "Sánchez",
+      "items": [
+        { "sku": "KE-205", "quantity": 1 },
+        { "sku": "PC-404", "quantity": 1 }
+      ],
+      "total": 281000,
+      "status": "awaiting_payment",
+      "status_es": "Esperando confirmación de pago",
+      "eta_es": "Pendiente — el pedido se procesa cuando se confirme el pago",
+      "carrier": null,
+      "tracking_number": null,
+      "shipping_city": "Bogotá",
+      "ordered_date": "Hace 1 día",
+      "notes": "Cliente seleccionó pago por PSE pero aún no se completó"
+    },
+    {
+      "order_number": "CV-78655",
+      "customer_type": "consumer",
+      "customer_name": "Henao",
+      "items": [
+        { "sku": "WL-303", "quantity": 1 }
+      ],
+      "total": 59500,
+      "status": "out_for_delivery",
+      "status_es": "En ruta de entrega",
+      "eta_es": "Hoy",
+      "carrier": "Servientrega",
+      "tracking_number": "SERV-2026-78655",
+      "shipping_city": "Medellín",
+      "ordered_date": "Hace 2 días",
+      "notes": "Cliente pidió empaque de regalo"
+    }
+  ]
+}
