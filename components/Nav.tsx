@@ -20,7 +20,7 @@ export default function Nav() {
     { href: "/", label: t("nav_home") },
     { href: "/reach", label: t("nav_reach") },
     { href: "/voice", label: t("nav_voice") },
-    { href: "/ops", label: t("nav_ops") },
+    { href: "/suite", label: t("nav_suite") },
     { href: "/support", label: t("nav_support") },
     { href: "/contact", label: t("nav_contact") },
   ];
