@@ -21,7 +21,7 @@ const DIM = "#55556A";
 // Product accents (exact match to live site)
 const VOICE_RED = "#BE3A55";
 const REACH_GREEN = "#16A34A";
-const OPS_PURPLE = "#7C3AED";
+const SUITE_PURPLE = "#7C3AED";
 
 // Light-mode palette (internal emails)
 const LINK = "#1560A8";
@@ -118,8 +118,8 @@ const COPY = {
     voice_desc: "Agentes de voz con IA disponibles 24/7 para llamadas entrantes",
     reach_tag: "Generación de leads",
     reach_desc: "Prospección y alcance automatizados",
-    ops_tag: "Operaciones",
-    ops_desc: "Automatización del back-office de tu negocio",
+    suite_tag: "Operaciones",
+    suite_desc: "El centro operativo de tu negocio — herramientas que activas según las necesites",
     talk_to_otto: "🎙  Habla con OTTO",
 
     sign_signoff: "Hablamos pronto,",
@@ -149,13 +149,13 @@ const COPY = {
     while_intro: "Have a poke around — or talk to OTTO, our voice agent, live on the site right now.",
     bespoke_tag: "Bespoke · Our flagship",
     bespoke_title: "Custom AI systems, built from the ground up",
-    bespoke_desc: "When a productised tool won't cut it. Strategy, architecture, build, deployment — end to end.",
+    bespoke_desc: "When an off-the-shelf tool won't cut it. Strategy, architecture, build, deployment — end to end.",
     voice_tag: "Voice AI",
     voice_desc: "24/7 AI voice agents for inbound calls",
     reach_tag: "Lead generation",
     reach_desc: "Automated prospecting and outreach",
-    ops_tag: "Operations",
-    ops_desc: "Back-office workflow automation",
+    suite_tag: "Operations",
+    suite_desc: "Your operational hub — tools you switch on as you need them",
     talk_to_otto: "🎙  Talk to OTTO",
 
     sign_signoff: "Speak soon,",
@@ -226,7 +226,7 @@ function whileYouWait(lang: Lang): string {
   const products = [
     { href: `${base}/voice`, name: "OLTO Voice", tag: c.voice_tag, desc: c.voice_desc, accent: VOICE_RED },
     { href: `${base}/reach`, name: "OLTO Reach", tag: c.reach_tag, desc: c.reach_desc, accent: REACH_GREEN },
-    { href: `${base}/ops`,   name: "OLTO Ops",   tag: c.ops_tag,   desc: c.ops_desc,   accent: OPS_PURPLE },
+    { href: `${base}/suite`, name: "OLTO Suite", tag: c.suite_tag, desc: c.suite_desc, accent: SUITE_PURPLE },
   ];
 
   const cards = products.map((p) => `
