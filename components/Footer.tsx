@@ -13,6 +13,8 @@ export default function Footer() {
     { href: "/privacy", label: t("footer_privacy") },
     { href: "/cookies", label: lang === "es" ? "Cookies" : "Cookies" },
     { href: "/ai-disclosure", label: lang === "es" ? "Aviso de IA" : "AI Disclosure" },
+    { href: "/data-retention", label: lang === "es" ? "Retención de Datos" : "Data Retention" },
+    { href: "/acceptable-use", label: lang === "es" ? "Uso Aceptable" : "Acceptable Use" },
     { href: "/terms", label: t("footer_terms") },
   ];
 
@@ -34,7 +36,7 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#55556A" }}>{t("footer_products")}</p>
             <div className="flex flex-col gap-3">
-              {[{ href: "/reach", label: "OLTO Reach" }, { href: "/voice", label: "OLTO Voice" }, { href: "/ops", label: "OLTO Ops" }].map((l) => (
+              {[{ href: "/reach", label: "OLTO Reach" }, { href: "/voice", label: "OLTO Voice" }, { href: "/suite", label: "OLTO Suite" }].map((l) => (
                 <Link key={l.href} href={l.href} className="text-sm hover:text-white transition-colors" style={{ color: "#55556A", textDecoration: "none" }}>{l.label}</Link>
               ))}
             </div>
