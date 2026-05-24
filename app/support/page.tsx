@@ -83,7 +83,7 @@ export default function SupportPage() {
                     <div>
                       <label className="block text-xs font-medium mb-2" style={{ color: "#888896" }}>{es ? "Producto" : "Product"}</label>
                       <select name="product" value={form.product} onChange={handleChange} style={inputStyle}>
-                        {["General", "OLTO Voice", "OLTO Reach", "OLTO Ops", es ? "Proyecto a medida" : "Bespoke project"].map(o => <option key={o}>{o}</option>)}
+                        {["General", "OLTO Voice", "OLTO Reach", "OLTO Suite", es ? "Proyecto a medida" : "Bespoke project"].map(o => <option key={o}>{o}</option>)}
                       </select>
                     </div>
                     <div>
