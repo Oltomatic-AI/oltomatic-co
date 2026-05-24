@@ -78,7 +78,7 @@ export default function ContactPage() {
                   <div>
                     <label className="block text-xs font-medium mb-2" style={{ color: "#888896" }}>{es ? "Me interesa" : "I'm interested in"}</label>
                     <select name="interest" value={form.interest} onChange={handleChange} style={inputStyle}>
-                      {(es ? ["Consulta general", "OLTO Voice", "OLTO Reach", "OLTO Ops", "Proyecto a medida"] : ["General enquiry", "OLTO Voice", "OLTO Reach", "OLTO Ops", "Bespoke project"]).map(o => <option key={o}>{o}</option>)}
+                      {(es ? ["Consulta general", "OLTO Voice", "OLTO Reach", "OLTO Suite", "Proyecto a medida"] : ["General enquiry", "OLTO Voice", "OLTO Reach", "OLTO Suite", "Bespoke project"]).map(o => <option key={o}>{o}</option>)}
                     </select>
                   </div>
                   <div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                       placeholder={es ? "¿Qué hace tu empresa y qué problema quieres resolver?" : "What does your business do, and what problem are you trying to solve?"}
                       style={{ ...inputStyle, resize: "vertical" as const }} />
                   </div>
-                  {status === "error" && <p className="text-sm" style={{ color: "#f87171" }}>{es ? "Algo salió mal. Escríbenos a hello@oltomatic.ai" : "Something went wrong. Email us at hello@oltomatic.ai"}</p>}
+                  {status === "error" && <p className="text-sm" style={{ color: "#f87171" }}>{es ? "Algo salió mal. Escríbenos a hello@oltomatic.co" : "Something went wrong. Email us at hello@oltomatic.co"}</p>}
                   <button type="submit" disabled={status === "loading"} className="w-full py-3.5 rounded-lg text-sm font-semibold text-white"
                     style={{ background: status === "loading" ? "#252538" : "#1560A8", cursor: status === "loading" ? "not-allowed" : "pointer" }}>
                     {status === "loading" ? (es ? "Enviando..." : "Sending...") : (es ? "Enviar mensaje →" : "Send message →")}
