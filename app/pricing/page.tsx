@@ -59,62 +59,6 @@ const voiceTiers = [
   },
 ];
 
-const reachTiers = [
-  {
-    name: "Launch",
-    price: "£399",
-    period: "/month",
-    setup: "£199 setup",
-    description: "For businesses ready to test AI-powered outreach on a focused target market.",
-    features: [
-      "1 target sector",
-      "200 prospects researched/month",
-      "100 personalised emails sent",
-      "AI lead scoring",
-      "Hot lead alerts",
-      "Dashboard access",
-    ],
-    cta: "Get Early Access",
-    highlighted: false,
-  },
-  {
-    name: "Growth",
-    price: "£699",
-    period: "/month",
-    setup: "£199 setup",
-    description: "For businesses scaling outreach across multiple sectors with strategic support.",
-    features: [
-      "2 target sectors",
-      "500 prospects researched/month",
-      "250 personalised emails sent",
-      "Everything in Launch",
-      "Monthly strategy call",
-      "A/B email testing",
-      "Reply management",
-    ],
-    cta: "Get Early Access",
-    highlighted: true,
-  },
-  {
-    name: "Pipeline",
-    price: "£999",
-    period: "/month",
-    setup: "£199 setup",
-    description: "For businesses that want a full outbound pipeline running on autopilot.",
-    features: [
-      "Unlimited sectors",
-      "1,000 prospects researched/month",
-      "500 personalised emails sent",
-      "Everything in Growth",
-      "Dedicated account management",
-      "CRM sync",
-      "Full pipeline reporting",
-    ],
-    cta: "Get Early Access",
-    highlighted: false,
-  },
-];
-
 function PricingCard({ tier, product }: { tier: typeof voiceTiers[0], product: string }) {
   return (
     <div className="relative flex flex-col rounded-2xl p-8"
@@ -227,33 +171,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* OLTO Reach */}
-      <section className="py-20" style={{ borderTop: "1px solid #1E1E32" }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white text-sm flex-shrink-0"
-              style={{ background: "#2272C3" }}>O</div>
-            <p className="section-label">OLTO Reach</p>
-          </div>
-          <div className="flex flex-wrap items-end justify-between gap-4 mb-12">
-            <div>
-              <h2 className="font-bold mb-3" style={{ fontSize: "clamp(24px, 2.5vw, 36px)", color: "#EEEEF5" }}>
-                AI lead generation
-              </h2>
-              <p className="max-w-xl" style={{ color: "#9999B0" }}>
-                Currently in controlled rollout. Plans below reflect our standard tiers — get in touch to discuss access and availability.
-              </p>
-            </div>
-            <span className="tag">Early access</span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {reachTiers.map((tier) => (
-              <PricingCard key={tier.name} tier={tier} product="reach" />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Oltomatic Bespoke */}
       <section className="py-20" style={{ borderTop: "1px solid #1E1E32" }}>
         <div className="max-w-6xl mx-auto px-6">
@@ -312,9 +229,9 @@ export default function PricingPage() {
           <div className="flex flex-col gap-6">
             {[
               { q: "Is there a contract?", a: "No long-term contracts. All plans are monthly and can be cancelled anytime. We'd rather earn your business every month than lock you in." },
-              { q: "What does the setup fee cover?", a: "Full build, configuration, testing, and onboarding. For Voice, this includes the agent personality, call flows, integrations, and going live. For Reach, it covers targeting setup, email warm-up, and campaign configuration." },
-              { q: "How quickly can I go live?", a: "OLTO Voice: typically 48 hours from payment. OLTO Reach: 5–7 days including email warm-up. Bespoke projects are scoped individually." },
-              { q: "What if I exceed my minute or prospect allowance?", a: "We'll let you know before you hit your limit. Overage is charged at a fair rate — we don't penalise growth." },
+              { q: "What does the setup fee cover?", a: "Full build, configuration, testing, and onboarding. For Voice, this includes the agent personality, call flows, integrations, and going live." },
+              { q: "How quickly can I go live?", a: "OLTO Voice: typically 48 hours from payment. Bespoke projects are scoped individually." },
+              { q: "What if I exceed my minute allowance?", a: "We'll let you know before you hit your limit. Overage is charged at a fair rate — we don't penalise growth." },
               { q: "Can I upgrade or downgrade my plan?", a: "Yes. Upgrade anytime, downgrade at the end of your billing cycle." },
             ].map((item) => (
               <div key={item.q} className="p-6 rounded-xl" style={{ background: "#0D0D1A", border: "1px solid #1E1E32" }}>
