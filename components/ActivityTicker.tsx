@@ -15,7 +15,6 @@ export default function ActivityTicker() {
     { icon: "📅", text: t("tick3"), detail: t("tick_d3") },
     { icon: "📊", text: t("tick4"), detail: t("tick_d4") },
     { icon: "📞", text: t("tick5"), detail: t("tick_d5") },
-    { icon: "✉️", text: t("tick6"), detail: t("tick_d6") },
     { icon: "🎯", text: t("tick7"), detail: t("tick_d7") },
     { icon: "📅", text: t("tick8"), detail: t("tick_d8") },
     { icon: "📞", text: t("tick9"), detail: t("tick_d9") },
