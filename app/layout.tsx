@@ -7,7 +7,7 @@ const dmSans = DM_Sans({ subsets: ["latin"], weight: ["300","400","500","600","7
 
 export const metadata: Metadata = {
   title: "Oltomatic — IA construida por operadores, para operadores",
-  description: "Automatización con IA para empresas. OLTO Voice, OLTO Reach, OLTO Suite y proyectos a medida.",
+  description: "Automatización con IA para empresas. OLTO Voice, OLTO Suite y proyectos a medida.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
