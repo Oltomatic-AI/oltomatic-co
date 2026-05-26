@@ -78,7 +78,7 @@ export default function ContactPage() {
                   <div>
                     <label className="block text-xs font-medium mb-2" style={{ color: "#888896" }}>{es ? "Me interesa" : "I'm interested in"}</label>
                     <select name="interest" value={form.interest} onChange={handleChange} style={inputStyle}>
-                      {(es ? ["Consulta general", "OLTO Voice", "OLTO Reach", "OLTO Suite", "Proyecto a medida"] : ["General enquiry", "OLTO Voice", "OLTO Reach", "OLTO Suite", "Bespoke project"]).map(o => <option key={o}>{o}</option>)}
+                      {(es ? ["Consulta general", "OLTO Voice", "OLTO Suite", "Proyecto a medida"] : ["General enquiry", "OLTO Voice", "OLTO Suite", "Bespoke project"]).map(o => <option key={o}>{o}</option>)}
                     </select>
                   </div>
                   <div>
