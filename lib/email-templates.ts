@@ -116,8 +116,6 @@ const COPY = {
     bespoke_desc: "Cuando una herramienta estándar no es suficiente. Estrategia, arquitectura, desarrollo, despliegue — de principio a fin.",
     voice_tag: "IA de Voz",
     voice_desc: "Agentes de voz con IA disponibles 24/7 para llamadas entrantes",
-    reach_tag: "Generación de leads",
-    reach_desc: "Prospección y alcance automatizados",
     suite_tag: "Operaciones",
     suite_desc: "El centro operativo de tu negocio — herramientas que activas según las necesites",
     talk_to_otto: "🎙  Habla con OTTO",
@@ -152,8 +150,6 @@ const COPY = {
     bespoke_desc: "When an off-the-shelf tool won't cut it. Strategy, architecture, build, deployment — end to end.",
     voice_tag: "Voice AI",
     voice_desc: "24/7 AI voice agents for inbound calls",
-    reach_tag: "Lead generation",
-    reach_desc: "Automated prospecting and outreach",
     suite_tag: "Operations",
     suite_desc: "Your operational hub — tools you switch on as you need them",
     talk_to_otto: "🎙  Talk to OTTO",
@@ -225,7 +221,6 @@ function whileYouWait(lang: Lang): string {
 
   const products = [
     { href: `${base}/voice`, name: "OLTO Voice", tag: c.voice_tag, desc: c.voice_desc, accent: VOICE_RED },
-    { href: `${base}/reach`, name: "OLTO Reach", tag: c.reach_tag, desc: c.reach_desc, accent: REACH_GREEN },
     { href: `${base}/suite`, name: "OLTO Suite", tag: c.suite_tag, desc: c.suite_desc, accent: SUITE_PURPLE },
   ];
 
