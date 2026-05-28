@@ -9,36 +9,36 @@ export default function VoicePage() {
 
   const tiers = [
     {
-      name: "Starter", price: lang === "es" ? "$600.000" : "COP 600,000",
+      name: lang === "es" ? "Inicial" : "Starter", price: lang === "es" ? "$600.000" : "COP 600,000",
       setup: lang === "es" ? "$600.000" : "COP 600,000",
-      desc: lang === "es" ? "Para empresas que quieren dejar de perder llamadas y capturar cada lead." : "For businesses that want to stop missing calls and start capturing every lead.",
+      desc: lang === "es" ? "Para empresas que quieren dejar de perder llamadas y capturar cada prospecto." : "For businesses that want to stop missing calls and start capturing every lead.",
       features: lang === "es"
-        ? ["1 agente de voz IA", "Hasta 300 min/mes", "Captura y calificación de leads", "Notificaciones por correo", "Cumplimiento GDPR", "Voz y personalidad estándar"]
+        ? ["1 agente de voz IA", "Hasta 300 min/mes", "Captura y calificación de prospectos", "Notificaciones por correo", "Cumplimiento GDPR", "Voz y personalidad estándar"]
         : ["1 AI voice agent", "Up to 300 mins/month", "Lead capture & qualification", "Email notifications", "GDPR compliant", "Standard voice & personality"],
     },
     {
-      name: "Growth", price: lang === "es" ? "$1.050.000" : "COP 1,050,000",
+      name: lang === "es" ? "Crecimiento" : "Growth", price: lang === "es" ? "$1.050.000" : "COP 1,050,000",
       setup: lang === "es" ? "$1.200.000" : "COP 1,200,000",
       desc: lang === "es" ? "Para empresas listas para automatizar reservas e integrarse con sus sistemas." : "For businesses ready to automate bookings and integrate with their existing systems.",
       features: lang === "es"
-        ? ["1 agente de voz IA", "Hasta 750 min/mes", "Todo en Starter", "Integración de calendario", "Integración CRM", "Informe mensual de rendimiento", "Base de conocimiento personalizada"]
+        ? ["1 agente de voz IA", "Hasta 750 min/mes", "Todo en Inicial", "Integración de calendario", "Integración CRM", "Informe mensual de rendimiento", "Base de conocimiento personalizada"]
         : ["1 AI voice agent", "Up to 750 mins/month", "Everything in Starter", "Calendar booking integration", "CRM integration", "Monthly performance report", "Custom knowledge base"],
       highlight: true,
     },
     {
-      name: "Enterprise", price: lang === "es" ? "Conversemos" : "Let's talk",
+      name: lang === "es" ? "Empresa" : "Enterprise", price: lang === "es" ? "Conversemos" : "Let's talk",
       setup: null,
       desc: lang === "es" ? "Para empresas con alto volumen de llamadas, requisitos complejos o múltiples sedes." : "For businesses with high call volume, complex requirements, or multiple locations.",
       features: lang === "es"
-        ? ["Múltiples agentes de voz", "Minutos ilimitados", "Todo en Growth", "Alertas por WhatsApp", "Soporte prioritario", "Gestor de cuenta dedicado", "Sesiones de optimización trimestrales"]
+        ? ["Múltiples agentes de voz", "Minutos ilimitados", "Todo en Crecimiento", "Alertas por WhatsApp", "Soporte prioritario", "Gestor de cuenta dedicado", "Sesiones de optimización trimestrales"]
         : ["Multiple AI voice agents", "Unlimited minutes", "Everything in Growth", "WhatsApp notifications", "Priority support", "Dedicated account manager", "Quarterly optimisation sessions"],
     },
   ];
 
   const faqs = lang === "es" ? [
-    { q: "¿Sonará robótico?", a: "No. OLTO Voice usa voces de IA premium que suenan naturales y humanas. Puedes escucharlo ahora mismo hablando con OTTO en esta página." },
+    { q: "¿Sonará robótico?", a: "No. OLTO Voz usa voces de IA premium que suenan naturales y humanas. Puedes escucharlo ahora mismo hablando con OTTO en esta página." },
     { q: "¿Qué pasa si no entiende algo?", a: "Transfiere la llamada a tu equipo. Tú defines el número de transferencia. Nada se pierde." },
-    { q: "¿Hay contrato?", a: "Sin contratos a largo plazo en Starter o Growth. Mensual, cancela cuando quieras. Enterprise se cotiza por proyecto." },
+    { q: "¿Hay contrato?", a: "Sin contratos a largo plazo en Inicial o Crecimiento. Mensual, cancela cuando quieras. Empresa se cotiza por proyecto." },
     { q: "¿Qué cubre la tarifa de configuración?", a: "Construcción completa, configuración de voz, base de conocimiento, integración de calendario y CRM, pruebas y onboarding. Activo en 48 horas." },
     { q: "¿Puede hablar otros idiomas?", a: "Sí. Soporte multilingüe disponible — requiere configuración adicional." },
     { q: "¿Qué pasa con las grabaciones de llamadas?", a: "Almacenadas de forma segura, cumplimiento GDPR, retención predeterminada de 90 días. Tú eres dueño de los datos." },
@@ -59,16 +59,16 @@ export default function VoicePage() {
         <div className="relative max-w-6xl mx-auto px-6">
           <span className="tag mb-6 inline-flex">
             <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#BE3A55" }} />
-            OLTO Voice · {t("voice_tag")}
+            {lang === "es" ? "OLTO Voz" : "OLTO Voice"} · {t("voice_tag")}
           </span>
           <h1 className="font-bold mb-6 leading-[1.05]" style={{ fontSize: "clamp(40px, 5vw, 68px)", color: "#EEEEF5" }}>
             {lang === "es" ? <>Tu teléfono suena a las 2am.<br /><span style={{ background: "linear-gradient(135deg, #BE3A55, #E05C7A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>OLTO responde.</span></> : <>Your phone rings at 2am.<br /><span style={{ background: "linear-gradient(135deg, #BE3A55, #E05C7A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>OLTO answers it.</span></>}
           </h1>
           <p className="mb-10 max-w-xl" style={{ fontSize: "18px", color: "#9999B0", lineHeight: "1.7" }}>
-            {lang === "es" ? "OLTO Voice atiende llamadas entrantes 24/7 — califica leads, agenda citas, responde preguntas y transfiere a tu equipo cuando importa." : "OLTO Voice handles inbound calls 24/7 — qualifying leads, booking appointments, answering questions, and handing off to your team when it matters."}
+            {lang === "es" ? "OLTO Voz atiende llamadas entrantes 24/7 — califica prospectos, agenda citas, responde preguntas y transfiere a tu equipo cuando importa." : "OLTO Voice handles inbound calls 24/7 — qualifying leads, booking appointments, answering questions, and handing off to your team when it matters."}
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/contact" className="btn-primary" style={{ background: "#BE3A55" }}>{lang === "es" ? "Obtener OLTO Voice" : "Get OLTO Voice"}</Link>
+            <Link href="/contact" className="btn-primary" style={{ background: "#BE3A55" }}>{lang === "es" ? "Obtener OLTO Voz" : "Get OLTO Voice"}</Link>
             <div className="btn-secondary" style={{ cursor: "default" }}>{lang === "es" ? "Desde $600.000/mes" : "From COP 600,000/month"}</div>
           </div>
         </div>
