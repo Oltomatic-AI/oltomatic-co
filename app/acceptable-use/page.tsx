@@ -51,7 +51,7 @@ export default function AcceptableUsePage() {
             </p>
             <p>
               {es
-                ? "Tergiversar la IA. OLTO Voice y OLTO Reach deben identificarse siempre como IA cuando corresponda (consulte nuestro Aviso de Divulgación de IA). Eliminar esa divulgación es una violación de esta política."
+                ? "Tergiversar la IA. OLTO Voz y OLTO Reach deben identificarse siempre como IA cuando corresponda (consulte nuestro Aviso de Divulgación de IA). Eliminar esa divulgación es una violación de esta política."
                 : "Misrepresent the AI. OLTO Voice and OLTO Reach must always identify themselves as AI when required (see our AI Disclosure Notice). Stripping that disclosure is a breach of this policy."}
             </p>
           </Section>
