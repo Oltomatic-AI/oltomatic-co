@@ -9,7 +9,7 @@ export default function OttoWidget() {
   const [expanded, setExpanded] = useState(false);
   const [ready, setReady] = useState(false);
   const vapiRef = useRef<any>(null);
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   useEffect(() => {
     const init = async () => {
@@ -31,7 +31,11 @@ export default function OttoWidget() {
     if (!ready || !vapiRef.current) return;
     setStatus("connecting");
     try {
-      await vapiRef.current.start("4865b9a6-a500-402d-823b-705137e24a4f");
+      await vapiRef.current.start("e7b2c2b0-c0b5-4aad-9c86-e0c792bf5fc5", {
+        firstMessage: lang === "es"
+          ? "¡Hola! Soy Otto, el asistente de inteligencia artificial de Oltomatic. ¿En qué te puedo ayudar hoy?"
+          : "Hi there! I'm Otto, Oltomatic's AI assistant. What can I help you with today?",
+      });
     } catch { setStatus("idle"); }
   };
 
