@@ -31,12 +31,12 @@ export default function AIDisclosurePage() {
           <Section title={es ? "Cuando habla con una IA" : "When you're talking to an AI"}>
             <p className="mb-3">
               {es
-                ? "OLTO Voice (agentes telefónicos). Cuando llama a un número operado por OLTO Voice, el agente abre la llamada informándole que está hablando con un asistente de IA. La llamada se graba con fines de calidad y mejora. Puede solicitar transferencia a un humano en cualquier momento."
+                ? "OLTO Voz (agentes telefónicos). Cuando llama a un número operado por OLTO Voz, el agente abre la llamada informándole que está hablando con un asistente de IA. La llamada se graba con fines de calidad y mejora. Puede solicitar transferencia a un humano en cualquier momento."
                 : "OLTO Voice (phone agents). When you call a number running OLTO Voice, the agent opens the call by telling you that you are speaking with an AI assistant. The call is recorded for quality and improvement. You can ask to be transferred to a human at any point."}
             </p>
             <p className="mb-3">
               {es
-                ? "OLTO Voice (widget web). El widget 'Habla con Otto' en oltomatic.co es un agente de voz IA. Se identifica al inicio de cada llamada."
+                ? "OLTO Voz (widget web). El widget 'Habla con Otto' en oltomatic.co es un agente de voz IA. Se identifica al inicio de cada llamada."
                 : "OLTO Voice (web widget). The 'Talk to Otto' widget on oltomatic.co is an AI voice agent. It identifies itself at the start of every call."}
             </p>
             <p>
