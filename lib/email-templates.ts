@@ -130,7 +130,7 @@ const COPY = {
 
     support_tag: "Ticket recibido",
     support_greeting: (name: string) => `Hola ${name} — estamos en ello.`,
-    support_body: "Tu ticket de soporte ha sido registrado. Responderemos en un día hábil — clientes Growth y Scale en 4 horas.",
+    support_body: "Tu ticket de soporte ha sido registrado. Responderemos en un día hábil — clientes Crecimiento y Empresa en 4 horas.",
     support_issue_label: "El problema que reportaste",
     support_followup: "Si piensas en algo más que deberíamos saber, responde a este correo.",
   },
@@ -164,7 +164,7 @@ const COPY = {
 
     support_tag: "Ticket received",
     support_greeting: (name: string) => `Hi ${name} — we're on it.`,
-    support_body: "Your support ticket has been logged. We'll respond within one business day — Growth & Scale customers within 4 hours.",
+    support_body: "Your support ticket has been logged. We'll respond within one business day — Growth & Enterprise customers within 4 hours.",
     support_issue_label: "The issue you flagged",
     support_followup: "If you think of anything else we should know, just reply to this email.",
   },
@@ -220,7 +220,7 @@ function whileYouWait(lang: Lang): string {
     </td></tr>`;
 
   const products = [
-    { href: `${base}/voice`, name: "OLTO Voice", tag: c.voice_tag, desc: c.voice_desc, accent: VOICE_RED },
+    { href: `${base}/voice`, name: lang === "es" ? "OLTO Voz" : "OLTO Voice", tag: c.voice_tag, desc: c.voice_desc, accent: VOICE_RED },
     { href: `${base}/suite`, name: "OLTO Suite", tag: c.suite_tag, desc: c.suite_desc, accent: SUITE_PURPLE },
   ];
 
